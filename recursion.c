@@ -1,21 +1,21 @@
 #include <stdio.h>
-int fact_loop(int num); 
+int fact_rec(int num); 
 
 void main()
 {
 	int num, result;
 	printf("Enter the number for factorial: ");
 	scanf("%d", &num);
-	result = fact_loop(num);
+	result = fact_rec(num);
 	printf("Factorial of %d is %d\n", num , result);
 }
 
-int fact_loop(int n)
+int fact_rec(int n)
 {
-	int i, fac=1;
-		for(i = n; i > 0; i--)
-	{
-		fac *= i;
+	if (n == 0){
+		return 1;
+	}	
+	else{
+		return (n*fact_rec(n-1));
 	}
-	return fac;
 }
