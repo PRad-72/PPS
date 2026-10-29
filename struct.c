@@ -15,11 +15,10 @@ void main(){
 	scanf("%d",&n);
 	struct Student s[n];
 	for(int i = 0; i < n; i++){
-	
 		printf("Enter Rollno for Student %d:", i+1);
 		scanf("%d", &s[i].roll);
 		printf("Enter Name of Student %d:", i+1);
-		scanf("%s", &s[i].name);
+		fgets(s[i].name, 30, stdin);
 		printf("Enter Marks of 1st Subject:");
 		scanf("%d", &s[i].m1);
 		printf("Enter Marks of 2nd Subject:");
