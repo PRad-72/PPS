@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-/* Function prototype using pointers (call by reference) */
+
 void swap(int *x, int *y);
 
 int main() {
@@ -15,7 +15,6 @@ int main() {
     printf("\nBefore Swapping:\n");
     printf("First number = %d, Second number = %d\n", num1, num2);
 
-    /* Pass addresses of num1 and num2 */
     swap(&num1, &num2);
 
     printf("\nAfter Swapping:\n");
