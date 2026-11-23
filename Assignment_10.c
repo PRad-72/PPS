@@ -7,21 +7,21 @@ int isLeapYear(int year) {
 
 int getDaysInMonth(int month, int year) {
     int daysInMonth[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-    if (month == 1 && isLeapYear(year)) { /* month 1 = February (0-indexed) */
+    if (month == 1 && isLeapYear(year)) { 
         return 29;
     }
     return daysInMonth[month];
 }
 
-/* Returns weekday index: 0 = Sunday, 1 = Monday, ..., 6 = Saturday */
+
 int getStartDayOfMonth(int year, int month) {
     struct tm date = {0};
-    date.tm_year = year - 1900; /* Years since 1900 */
-    date.tm_mon = month;         /* 0 = January, ..., 11 = December */
-    date.tm_mday = 1;            /* 1st day of the month */
-    date.tm_isdst = -1;          /* Let system determine DST */
+    date.tm_year = year - 1900; 
+    date.tm_mon = month;        
+    date.tm_mday = 1;        
+    date.tm_isdst = -1;          
 
-    mktime(&date);               /* Normalizes struct tm and populates tm_wday */
+    mktime(&date);
     return date.tm_wday;
 }
 
@@ -47,12 +47,12 @@ int main() {
         printf("\n------------ %s %d ------------\n", months[month], year);
         printf("Sun  Mon  Tue  Wed  Thu  Fri  Sat\n");
 
-        /* Print leading spaces before the 1st day of the month */
+  
         for (int space = 0; space < startDay; space++) {
             printf("     ");
         }
 
-        /* Print all days of the month */
+    
         for (int day = 1; day <= totalDays; day++) {
             printf("%3d  ", day);
             if ((startDay + day) % 7 == 0) {
